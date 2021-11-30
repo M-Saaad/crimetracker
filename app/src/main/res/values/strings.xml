@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">Crime Tracker</string>
+    <string name="title_activity_plan_route">Map</string>
+    <string name="title_activity_mark_mugged">Map</string>
+</resources>

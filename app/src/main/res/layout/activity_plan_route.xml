@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+
+    android:id="@+id/relativeLayout1"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+
+
+    <!--    <EditText-->
+<!--        android:id="@+id/editText1"-->
+<!--        android:layout_width="377dp"-->
+<!--        android:layout_height="52dp"-->
+<!--        android:layout_gravity="center_vertical|center"-->
+<!--        android:background="#FFFFFF"-->
+<!--        android:ems="10"-->
+<!--        android:inputType="text"-->
+<!--        android:labelFor="@+id/editText1"-->
+<!--        android:text="Allah Wali Chorangi"-->
+<!--        app:layout_constraintBottom_toBottomOf="parent"-->
+<!--        app:layout_constraintEnd_toEndOf="parent"-->
+<!--        app:layout_constraintHorizontal_bias="0.529"-->
+<!--        app:layout_constraintStart_toStartOf="parent"-->
+<!--        app:layout_constraintTop_toTopOf="parent"-->
+<!--        app:layout_constraintVertical_bias="0.892">-->
+
+<!--        <requestFocus />-->
+<!--    </EditText>-->
+
+    <fragment
+        android:id="@+id/map"
+        android:name="com.google.android.gms.maps.SupportMapFragment"
+        android:layout_width="410dp"
+        android:layout_height="731dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0"
+        tools:context=".PlanRoute" />
+
+    <com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton
+        android:id="@+id/arrowButton"
+        style="@style/Widget.MaterialComponents.Button.TextButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Confirm >"
+        android:textColor="#FFFFFF"
+        app:backgroundTint="#3ACCE1"
+        app:iconTint="#FFFFFF"
+        app:layout_constraintBottom_toTopOf="@+id/linearLayout"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.947"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/map"
+        app:layout_constraintVertical_bias="0.982" />
+
+    <ImageView
+    android:id="@+id/pin"
+    android:layout_width="20dp"
+    android:layout_height="35dp"
+    android:contentDescription="TODO"
+    android:foreground="@drawable/pin2"
+    app:layout_constraintBottom_toBottomOf="@+id/map"
+    app:layout_constraintEnd_toEndOf="@+id/map"
+    app:layout_constraintHorizontal_bias="0.498"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toTopOf="parent"
+    app:layout_constraintVertical_bias="0.465"
+    app:srcCompat="@drawable/pin2" />
+
+    <LinearLayout
+        android:id="@+id/linearLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/top_round_corner"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:paddingLeft="20dp"
+        android:paddingTop="18dp"
+        android:paddingRight="20dp"
+        android:paddingBottom="10dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/map">
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/editTextStartLocation"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
+            android:ems="10"
+            android:hint="Start Location"
+            android:inputType="text"
+            android:textColorHint="#959DAD"
+            android:visibility="visible"
+            app:boxStrokeColor="#3ACCE1"
+            app:hintTextColor="#3ACCE1">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/editTextLocation2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="#EEEEEE"
+                android:textColorHint="#EEEEEE"
+                android:textCursorDrawable="@null" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+    </LinearLayout>
+
+    <!--    <EditText-->
+<!--        android:id="@+id/editText2"-->
+<!--        android:layout_width="380dp"-->
+<!--        android:layout_height="52dp"-->
+<!--        android:layout_gravity="center_vertical|center"-->
+<!--        android:background="#FFFFFF"-->
+<!--        android:ems="10"-->
+<!--        android:inputType="text"-->
+<!--        android:labelFor="@+id/editText1"-->
+<!--        android:text="Steel Mill Mor"-->
+<!--        app:layout_constraintBottom_toBottomOf="parent"-->
+<!--        app:layout_constraintEnd_toEndOf="parent"-->
+<!--        app:layout_constraintStart_toStartOf="parent"-->
+<!--        app:layout_constraintTop_toBottomOf="@+id/editText1">-->
+
+<!--        <requestFocus />-->
+<!--    </EditText>-->
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

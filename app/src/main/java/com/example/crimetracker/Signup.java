@@ -1,0 +1,107 @@
+package com.example.crimetracker;
+
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
+
+import android.content.Intent;
+import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
+import android.widget.EditText;
+import android.widget.Toast;
+
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
+import com.google.android.material.textfield.TextInputEditText;
+import com.google.firebase.auth.AuthResult;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.FirebaseDatabase;
+
+public class Signup extends AppCompatActivity {
+
+    TextInputEditText Name,Email,Password;
+    Button continueBtn;
+    Button loginBtn;
+    FirebaseAuth fAuth;
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_signup);
+
+        Name = (TextInputEditText) findViewById(R.id.editTextName2);
+        Email = (TextInputEditText) findViewById(R.id.editTextEmail2);
+        Password = (TextInputEditText) findViewById(R.id.editTextPassword2);
+        continueBtn = (Button) findViewById(R.id.continueButton);
+        loginBtn = (Button) findViewById(R.id.loginButton);
+
+        loginBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(Signup.this  , Login.class));
+            }
+        });
+
+        fAuth = FirebaseAuth.getInstance();
+
+
+        continueBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                String enteredName = Name.getText().toString().trim();
+                String enteredEmail = Email.getText().toString().trim();
+                String enteredPassword = Password.getText().toString().trim();
+
+                if (enteredName.isEmpty()) {
+                    Name.setError("Name is Required");
+                    Name.requestFocus();
+                    return;
+                }
+
+                if (enteredEmail.isEmpty()) {
+                    Email.setError("Email is Required!");
+                    Email.requestFocus();
+                    return;
+                }
+
+                if (enteredPassword.isEmpty()) {
+                    Password.setError("Password is Required!");
+                    Password.requestFocus();
+                    return;
+                }
+
+                fAuth.createUserWithEmailAndPassword(enteredEmail, enteredPassword).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
+                    @Override
+                    public void onComplete(@NonNull Task<AuthResult> task) {
+                        if (task.isSuccessful()) {
+                            User user = new User(enteredName, enteredEmail);
+
+                            FirebaseDatabase.getInstance().getReference("Users")
+                                    .child(FirebaseAuth.getInstance().getCurrentUser().getUid())
+                                    .setValue(user).addOnCompleteListener(new OnCompleteListener<Void>() {
+                                @Override
+                                public void onComplete(@NonNull Task<Void> task) {
+                                    if (task.isSuccessful()) {
+                                        Toast.makeText(Signup.this, "User is Succesfully Created", Toast.LENGTH_LONG).show();
+
+                                        startActivity(new Intent(Signup.this  , Login.class));
+                                    } else {
+                                        Toast.makeText(Signup.this, "Signup Unsuccesfull, please try again!", Toast.LENGTH_LONG).show();
+                                    }
+                                }
+                            });
+                        } else {
+                            Toast.makeText(Signup.this, "Signup Unsuccesfull, please try again!", Toast.LENGTH_LONG).show();
+                        }
+                    }
+                });
+
+            }
+        });
+    }
+}
+
+
+
+
+
