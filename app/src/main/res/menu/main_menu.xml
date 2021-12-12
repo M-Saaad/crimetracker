@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <group android:checkableBehavior="single">
+
+        <item
+            android:id="@+id/nav_home"
+            android:title="Home"
+            android:icon="@drawable/home_icon"/>
+
+        <item
+            android:id="@+id/nav_plan_route"
+            android:title="Plane Route"
+            android:icon="@drawable/route_icon"/>
+
+        <item
+            android:id="@+id/nav_mark_mugged_activity"
+            android:title="Mark Mugged Activity"
+            android:icon="@drawable/danger"/>
+
+        <item
+            android:id="@+id/nav_id_sos"
+            android:title="Generate SOS"
+            android:icon="@drawable/sos_icon"/>
+
+    </group>
+
+    <group android:checkableBehavior="single">
+
+        <item
+            android:title="Profile">
+
+            <menu>
+
+                <item
+                    android:id="@+id/nav_id_profile"
+                    android:title="Profile"
+                    android:icon="@drawable/profile_icon"/>
+
+                <item
+                    android:id="@+id/nav_id"
+                    android:title="Logout"
+                    android:icon="@drawable/logout_icon"/>
+
+            </menu>
+
+        </item>
+
+    </group>
+
+<!--    <item android:title="Communicate">-->
+
+<!--        <menu>-->
+
+<!--            <item-->
+<!--                android:id="nav_home"-->
+<!--                android:title="Home"-->
+<!--                android:icon="@drawable/home_icon"/>-->
+
+<!--            <item-->
+<!--                android:id="nav_plan_route"-->
+<!--                android:title="Plane Route"-->
+<!--                android:icon="@drawable/route_icon"/>-->
+
+<!--        </menu>-->
+
+<!--    </item>-->
+
+</menu>
