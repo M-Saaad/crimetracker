@@ -2,4 +2,7 @@
     <string name="app_name">Crime Tracker</string>
     <string name="title_activity_plan_route">Map</string>
     <string name="title_activity_mark_mugged">Map</string>
+
+    <string name="open_nav_bar">Open navigation bar</string>
+    <string name="close_nav_bar">Close navigation bar</string>
 </resources>

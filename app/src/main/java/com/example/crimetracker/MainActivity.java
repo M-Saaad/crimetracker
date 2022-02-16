@@ -44,6 +44,17 @@ public class MainActivity extends AppCompatActivity {
         anim.setDuration(5000);
         progressBar.setAnimation(anim);
     }
+
+    protected void onStart() {
+        super.onStart();
+
+        if (Preferences.getDataLogin(this)) {
+            if (Preferences.getDataAs(this).equals("user")) {
+                startActivity(new Intent(this, Menu.class));
+                finish();
+            }
+        }
+    }
 }
 
 

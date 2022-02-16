@@ -5,9 +5,8 @@
     android:id="@+id/backgroud"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#2A2E43"
     tools:context=".MainActivity">
-
+<!--    android:background="#2A2E43"-->
     <ImageView
         android:id="@+id/imageView"
         android:layout_width="267dp"
@@ -26,7 +25,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="0 %"
-        android:textColor="#EEEEEE"
+        android:textColor="#3ACCE1"
         android:textSize="35sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"

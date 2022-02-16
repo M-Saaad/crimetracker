@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".GenerateSOS">
+    <!--    android:background="#2A2E43"-->
+
+    <Button
+        android:id="@+id/recordButton"
+        android:layout_width="280dp"
+        android:layout_height="80dp"
+        android:layout_marginBottom="36dp"
+        android:text="Record Again"
+        android:textColor="#EEEEEE"
+        android:textSize="18sp"
+        app:backgroundTint="#3ACCE1"
+        app:cornerRadius="20dp"
+        app:layout_constraintBottom_toTopOf="@+id/backButton"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.496"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0" />
+
+    <Button
+        android:id="@+id/backButton"
+        android:layout_width="280dp"
+        android:layout_height="80dp"
+        android:layout_marginBottom="36dp"
+        android:text="Back"
+        android:textColor="#EEEEEE"
+        android:textColorLink="#FFFFFF"
+        android:textSize="18sp"
+        app:backgroundTint="#3ACCE1"
+        app:cornerRadius="20dp"
+        app:layout_constraintBottom_toTopOf="@+id/messageButton"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/messageButton"
+        android:layout_width="280dp"
+        android:layout_height="80dp"
+        android:layout_marginBottom="60dp"
+        android:text="Send Message"
+        android:textColor="#EEEEEE"
+        android:textColorLink="#FFFFFF"
+        android:textSize="18sp"
+        app:backgroundTint="#3ACCE1"
+        app:cornerRadius="20dp"
+        app:layout_constraintBottom_toTopOf="@+id/statusTextView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/statusTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="136dp"
+        android:textColor="#3ACCE1"
+        android:textColorLink="#FFFFFF"
+        android:textSize="24sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
